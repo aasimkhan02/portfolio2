@@ -1,0 +1,4 @@
+#FF7F11 - orange
+#BEB7A4- khaki
+#FFFFFC - white
+#FF3F00- darker orange

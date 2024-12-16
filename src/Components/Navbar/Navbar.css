@@ -8,11 +8,12 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    position: relative; 
     background-color: transparent; 
     transform: translateY(-100%);
     animation: slideInFromTop 0.8s ease-out forwards;
+    position: fixed;
 }
+
 .logo{
     display: flex;
     align-items: center;
@@ -42,7 +43,7 @@
     list-style: none;
 }
 .nav-items li a{
-    color: white;
+    color: #BEB7A4;
     text-decoration: none;
     font-size: 16px;
     text-transform: uppercase;
@@ -56,16 +57,13 @@
     bottom: -7px;
     width: 0;
     height: 2px;
-    background-color: white;
+    background-color: #BEB7A4;
     transition: all 0.5s ease;
     transform: translateX(-50%);
 }
 
 .nav-items li a:hover::after {
     width: 70%;
-}
-.Resume{
-    width: 20vh;
 }
 
 @keyframes slideInFromTop {
