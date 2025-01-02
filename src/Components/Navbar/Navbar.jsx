@@ -1,23 +1,24 @@
-import React from 'react'
-import './Navbar.css'
-import Logo from './../../assets/logo.png'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import './Navbar.css';
 
 const Navbar = () => {
     return (
-        <div className='Navbar container'>
-            <div className="logo">
-                <img src={Logo} alt="" />
-                <h1>AASIM</h1>
+        <div className='Navbar'>
+            <h2 className='logo' style={{color: '#BEB7A4'}}>Aasim</h2>
+            <div className="Nav-list">
+                <h4>Home</h4>
+                <h4>About</h4>
+                <h4>Skills</h4>
+                <h4>Projects</h4>
             </div>
-            <div className="nav-items">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Projects</a></li>
-                <button className='Resume btn'>Resume</button>
+            <div className="Resume" style={{color: '#BEB7A4'}}>
+                <h2>Resume <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="arrow-icon" /></h2>
             </div>
+
         </div>
-    )
-}
+    );
+};
 
 export default Navbar;
