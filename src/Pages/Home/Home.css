@@ -13,15 +13,30 @@
     height: 100vh;
 }
 .Hero{
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
     color: white;
-    height: 100vh;
-    width: 70%;
 }
-
+.Hero h4{
+    font-size: 20px;
+    text-align: left;
+    width: 52rem;
+}
+.Hero h1{
+    font-size: 10rem;
+    width: 56.5rem;
+}
+.Hero h3 {
+    font-size: 2rem;
+    width: 54rem;
+    text-align: right;
+    color: #eb5939;
+}
 .About{
     display: flex;
     align-items: flex-start;
@@ -53,24 +68,7 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(40%);
-}
-
-.changing-text{
-    letter-spacing: 3ypx;
-    font-size: 20px;
-    margin-top: 5px;
-    color: #eb5939;
-    position: relative;
-    left: 100px;
-}
-
-.cursor {
-    display: inline-block;
-    width: 1px;
-    height: 1em;
-    background-color: transparent;
-    animation: blink 0.5s steps(2, start) infinite;
+    filter: brightness(100%);
 }
 
 .Heading{
@@ -133,145 +131,114 @@
     border-bottom: 1px solid black;
 }
 .Projects{
-    background-color: #FFFFFC;
+    background-color: #1a1a1a;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     z-index: 2;
     width: 100%;
     height: auto;
-    gap: 6vh;
-    padding-top: 5%;
-    border-bottom: 10vh solid white;
+    border-bottom: 100vh solid #1a1a1a;
+    gap: 1vh;
+    padding-top: 7%;
 }
+
 .Projects .Heading{
-    width: 100%;
+    color: white;
+    font-size: 40px;
     padding-left: 5%;
 }
-.Projects .Main-content {
+
+.Projects .Main-content{
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
+
+    flex-direction: column;
+}
+
+.Projects .Healthwave{
+    display: flex;
     flex-direction: column;
     width: 100%;
     height: auto;
-    gap: 40px;
+    gap: 7vh;
+    padding: 7% 0 0 5%;
 }
-
-.Healthcare {
-    width: 90%;
-    height: 80vh;
-    background-color: #000000;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    border-radius: 25px;
-    overflow: hidden;
+.Projects img{
+    width: 80%;
+    cursor: pointer;
 }
-
-.Healthcare .Project-image {
-    position: absolute;
-    right: 0;
-    background-image: url('./../../assets/Healthcare.jpg');
-    width: 70%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    z-index: 1;
+.Projects p{
+    font-size: 31px;
+    transform: scale(1, 1.1);
+    display: inline-block;
+    font-weight: 300;
 }
-
-.Healthcare .Project-content {
-    position: absolute;
-    left: 3%;
-    top: 5%;
-    padding: 20px;
-    border-radius: 15px;
-    color: #333333;
-    z-index: 2;
-    width: 40%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.row{
+.project-details{
     width: 100%;
-    height: 80vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
+    gap: 6vh;
+}
+.project-title{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 40px;
+}
+.project-description{
+    width: 50%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.project-techstack{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
     gap: 20px;
-    align-items: center;
-    justify-content: center;
-}
-.row .Weather, .row .Quiz{
-    height: 100%;
-    width: 44.3%;
-    border-radius: 25px;
-} 
-.Weather{
-    background-color: #A3C9E2;
-    position: relative;
-    overflow: hidden;
-}
-.Weather .Project-image{
-    position: absolute;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(./../../assets/Weather.png);
-    background-position: center;
-    position: relative;
-    top: 100px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.Weather .Project-content {
-    position: absolute;
-    left: 3%;
-    top: 5%;
-    padding: 20px;
-    border-radius: 15px;
-    color: #333333;
-    z-index: 2;
-    width: 100%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: rgb(77, 77, 77);
-}
-.Quiz{
-    background-color: #000000;
-    position: relative;
-    overflow: hidden;
-}
-.Quiz .Project-image{
-    position: absolute;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(./../../assets/Quiz.png);
-    background-position: center;
-    position: relative;
-    top: 110px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.Quiz .Project-content {
-    position: absolute;
-    left: 3%;
-    top: 5%;
-    padding: 20px;
-    border-radius: 15px;
-    color: #ffffff;
-    z-index: 2;
-    width: 100%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: rgb(180, 180, 180);
+    font-size: 21px;
+    color: #eb5939;
+    text-transform: uppercase;
 }
 
+.Projects .AXWeather{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 7vh;
+    background-color: #bdc7d0;
+    border-bottom: 20vh solid #bdc7d0;
+    padding: 7% 0 0 5%;
+    margin-top: 20vh;
+}
+.Projects .AXWeather .project-title{
+    color: black;
+}
+.Projects .AXWeather .project-details{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.Projects .QuizElite{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10vh;
+    border-bottom: 10vh solid white;
+    padding: 7% 0 0 5%;
+    background-color: white;
+}
+.Projects .QuizElite .project-title{
+    color: black;
+}
 @keyframes blink {
     0%, 100% {
         opacity: 1;
