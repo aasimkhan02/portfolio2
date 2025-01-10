@@ -8,8 +8,14 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling */
+    font-size: 16px; /* Base font size for rem calculations */
+}
+
+html, body {
+    height: 100%; /* Ensure body and html take full height */
+    width: 100%;  /* Ensure body and html take full width */
     overflow-x: hidden; /* Prevent horizontal scroll */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 body {
@@ -17,16 +23,18 @@ body {
     font-family: "Outfit", sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
+    min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
     background-image: url('./assets/Grey.jpg');
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .container {
     padding: 0 5%;
+    width: 100%; /* Make sure container width doesn't exceed viewport */
+    overflow: hidden; /* Prevent overflow within the container */
 }
 
 .btn {
@@ -49,4 +57,24 @@ body {
     box-shadow: 5px 5px #BEB7A4;
     color: black;
     border-color: black;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden; /* Make sure no horizontal overflow */
+    }
+
+    body {
+        padding: 0 10px; /* Add padding to ensure content fits within viewport */
+    }
+
+    .container {
+        padding: 0 2%; /* Adjust container padding for smaller screens */
+    }
+
+    .btn {
+        width: 50vw; /* Make button width responsive */
+        height: 6vh; /* Adjust height for small screens */
+        font-size: 14px; /* Smaller font size on smaller screens */
+    }
 }

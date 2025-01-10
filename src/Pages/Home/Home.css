@@ -16,26 +16,90 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    position: relative;
     color: white;
 }
-.Hero h4{
-    font-size: 20px;
-    text-align: left;
-    width: 52rem;
-}
-.Hero h1{
+.hero-marquee h1{
     font-size: 10rem;
-    width: 56.5rem;
+    word-spacing: 1.3rem;
+    letter-spacing: 0.125rem;
+    margin-left: 4rem;
+
 }
-.Hero h3 {
-    font-size: 2rem;
-    width: 54rem;
-    text-align: right;
-    color: #eb5939;
+
+.Home .Other-parts{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8% 0 15%;
+}
+.Home .Other-parts h2{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 100%;
+    width: 13rem;
+    height: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 200;
+    cursor: pointer;
+    transition: 0.7s ease-in-out;
+    position: relative;
+    top: 5vh;
+    transition: 0.3s ease-in-out;
+}
+.Home .Other-parts h2:hover{
+    background-color: #FF3F00;
+    border: 2px solid #FF3F00;
+}
+
+.Home .Other-parts h1{
+    font-size: 2.1rem;
+    font-weight: 300;
+    position: relative;
+    top: 5vh;
+}
+@media (max-width: 800px){
+    .Hero{
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 20%;
+    }
+    .Home .Other-parts{
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        flex-direction: column-reverse;
+        border-bottom: 10vh;
+        gap: 7vh;
+    }
+    .Home .Other-parts h1{
+        font-size: 2.7rem;
+        font-weight: 300;
+        position: relative;
+        top: 5vh;
+        text-align: center;
+    }
+    .hero-marquee h1{
+        font-size: 6rem;
+    }
+    .Home .Other-parts h2{
+        background-color: #FF3F00;
+        transition: 0.7s ease-in-out;
+        border: 2px solid #FF3F00;
+        font-size: 1.8rem;
+    }
+    .Home .Other-parts h2:hover{
+        background-color: transparent;
+        border: 2px solid white;
+    }
 }
 .About{
     display: flex;
@@ -74,7 +138,7 @@
 .Heading{
     width: 100%;
     color: #FF3F00;
-    font-size: 15px;
+    font-size: 15pxz;
 }
 
 .About .Main-content{

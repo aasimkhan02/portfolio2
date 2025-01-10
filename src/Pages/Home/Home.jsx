@@ -4,11 +4,29 @@ import '@lottiefiles/lottie-player';
 import HealthWave from './../../assets/Doctor.jpg'
 import AXWeather from './../../assets/Weather.jpg'
 import QuizElite from './../../assets/Quiz.jpg'
-import Frame1Video from './../../assets/Background new.mp4'
+import Marquee from "react-fast-marquee";
 
 const Home = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const [clickedIndex, setClickedIndex] = useState(null); // State for the clicked section
+    const [clickedIndex, setClickedIndex] = useState(null);
+    const [transform, setTransform] = useState({});
+
+    const handleMouseMove = (e, index) => {
+        const rect = e.target.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        setTransform(prevState => ({
+            ...prevState,
+            [index]: `translate(${x * 0.3}px, ${y * 0.3}px)`
+        }));
+    };
+
+    const handleMouseRemove = (index) => {
+        setTransform(prevState => ({
+            ...prevState,
+            [index]: 'translate(0, 0)'
+        }));
+    };
 
     const handleMouseEnter = (index) => {
         setHoveredIndex(index);
@@ -16,15 +34,14 @@ const Home = () => {
 
     const handleMouseLeave = () => {
         setHoveredIndex(null);
-        setClickedIndex(null); // Reset clickedIndex on mouse leave
+        setClickedIndex(null);
     };
 
     const handleClick = (index) => {
-        // If the clicked section is already selected, reset it
         if (clickedIndex === index) {
             setClickedIndex(null);
         } else {
-            setClickedIndex(index); // Set the clicked index
+            setClickedIndex(index);
         }
     };
 
@@ -48,11 +65,20 @@ const Home = () => {
     return (
         <div className="Home">
             <div className="Hero">
-                <h4>I &nbsp;AM</h4>
-                <h1>Aasim Khan</h1>
-                <h3>
-                    Crafting Code, Shaping Ideas
-                </h3>
+                <div className="Other-parts">
+                    <h2
+                        className='contact-link'
+                        style={{ transform: transform['contact-link'] }}
+                        onMouseMove={(e) => handleMouseMove(e, 'contact-link')}
+                        onMouseLeave={() => handleMouseRemove('contact-link')}
+                    >
+                        Contact me
+                    </h2>
+                    <h1>Developer,<br /> Designer & Engineer</h1>
+                </div>
+                <Marquee className='hero-marquee' speed={130}>
+                    <h1>Khan Mohd Aasim - </h1>
+                </Marquee>
             </div>
             <div className="About Frame">
                 <div className="Heading">
@@ -66,7 +92,7 @@ const Home = () => {
                     </h1>
                 </div>
             </div>
-            <div className="Skill Frame">
+            {/* <div className="Skill Frame">
                 <div className="Heading">
                     <h1>What I Do</h1>
                 </div>
@@ -203,7 +229,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
